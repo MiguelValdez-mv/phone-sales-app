@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
-import { ProductListView } from './views/ProductList'
-import { ProductDetailsView } from './views/ProductDetails'
+import { ProductListView } from './pages/ProductList'
+import { ProductDetailsView } from './pages/ProductDetails'
 import { Header } from './components/Header'
 
 function App() {
