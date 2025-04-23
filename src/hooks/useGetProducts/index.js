@@ -2,6 +2,7 @@ import axios from 'axios'
 import { useEffect, useState } from 'react'
 
 import { API_URL, LOCAL_STORAGE_KEYS } from '../../constants'
+import { saveExpiringItem, loadExpiringItem } from '../../utils/storage'
 
 export function useGetProducts() {
   const [products, setProducts] = useState([])
@@ -11,18 +12,13 @@ export function useGetProducts() {
     try {
       setIsLoading(true)
 
-      const storedProducts = JSON.parse(
-        localStorage.getItem(LOCAL_STORAGE_KEYS.PRODUCTS)
-      )
+      const storedProducts = loadExpiringItem(LOCAL_STORAGE_KEYS.PRODUCTS)
       if (storedProducts) {
         setProducts(storedProducts)
       } else {
         const response = await axios.get(`${API_URL}/api/product`)
 
-        localStorage.setItem(
-          LOCAL_STORAGE_KEYS.PRODUCTS,
-          JSON.stringify(response.data)
-        )
+        saveExpiringItem(LOCAL_STORAGE_KEYS.PRODUCTS, response.data)
 
         setProducts(response.data)
       }
