@@ -23,7 +23,7 @@ export function Breadcrumbs() {
 
             <span
               key={path}
-              className="cursor-pointer"
+              className="cursor-pointer truncate"
               onClick={() => navigate(path)}
             >
               {segment}

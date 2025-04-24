@@ -13,7 +13,7 @@ export function ProductListView() {
   return (
     <Page isLoading={isLoading}>
       <TextInput
-        className="w-full self-end max-w-96"
+        className="w-full self-end md:max-w-96"
         value={searchParam}
         onChange={(event) => setSearchParam(event.target.value)}
         placeholder="Buscar producto..."

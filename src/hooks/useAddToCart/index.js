@@ -2,7 +2,7 @@ import { useState } from 'react'
 import axios from 'axios'
 
 import { API_URL, LOCAL_STORAGE_KEYS } from '../../constants'
-import { saveExpiringItem, loadExpiringItem } from '../../utils/storage'
+import { saveExpiringItem } from '../../utils/storage'
 
 export function useAddToCart() {
   const [isLoading, setIsLoading] = useState(false)

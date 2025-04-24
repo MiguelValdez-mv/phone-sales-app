@@ -18,6 +18,7 @@ export function ProductDetailsView() {
       <img
         className="w-64 h-64 rounded-xl self-center md:self-auto"
         src={productDetails.imgUrl}
+        alt={productDetails.id}
       />
 
       <Col className="gap-4">
