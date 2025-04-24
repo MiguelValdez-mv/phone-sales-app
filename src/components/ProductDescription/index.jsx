@@ -12,7 +12,7 @@ export function ProductDescription(props = {}) {
     { title: 'Sistema Operativo', value: props.os },
     { title: 'Resolución de pantalla', value: props.displayResolution },
     { title: 'Batería', value: props.battery },
-    { title: 'Cámara Principal', value: props.primaryCamera?.join(' ') },
+    { title: 'Cámara Principal', value: props.primaryCamera?.join?.(' ') },
     { title: 'Cámara Secundaria', value: props.secondaryCmera },
     { title: 'Dimensiones', value: props.dimentions },
     { title: 'Peso', value: props.weight },

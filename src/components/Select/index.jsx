@@ -19,8 +19,8 @@ export function Select({ id, label, value, onChange, className, options }) {
         onChange={onChange}
       >
         {options?.map((opt) => (
-          <option key={opt.code} value={opt.name}>
-            {opt.name}
+          <option key={opt.code} value={opt.code}>
+            {opt.name} (Código - {opt.code})
           </option>
         ))}
       </select>

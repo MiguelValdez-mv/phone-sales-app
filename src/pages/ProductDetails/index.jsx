@@ -5,11 +5,13 @@ import { Col } from '../../components/Col'
 import { ProductDescription } from '../../components/ProductDescription'
 import { ProductActions } from '../../components/ProductActions'
 import { useGetProductDetails } from '../../hooks/useGetProductDetails'
+import { useAddToCart } from '../../hooks/useAddToCart'
 
 export function ProductDetailsView() {
   const { id } = useParams()
 
   const { productDetails, isLoading } = useGetProductDetails(id)
+  const { addToCart } = useAddToCart()
 
   return (
     <Page className="md:flex-row justify-center gap-10" isLoading={isLoading}>
@@ -21,7 +23,11 @@ export function ProductDetailsView() {
       <Col className="gap-4">
         <ProductDescription {...productDetails} />
 
-        <ProductActions {...productDetails.options} />
+        <ProductActions
+          {...productDetails.options}
+          id={productDetails.id}
+          addToCart={addToCart}
+        />
       </Col>
     </Page>
   )
