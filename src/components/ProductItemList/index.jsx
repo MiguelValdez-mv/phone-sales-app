@@ -8,7 +8,7 @@ import { CURRENCIES } from '../../constants'
 export function ProductItemList({ id, brand, model, price, imgUrl }) {
   const navigate = useNavigate()
 
-  const goToProductDetails = () => navigate(`/product/${id}`)
+  const goToProductDetails = () => navigate(`/${id}`)
 
   return (
     <Card className="gap-4 cursor-pointer" onClick={goToProductDetails}>

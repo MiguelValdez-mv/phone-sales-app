@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 
 import { Card } from '../Card'
+import { Breadcrumbs } from '../Breadcrumbs'
 import { LOCAL_STORAGE_KEYS } from '../../constants'
 import { loadExpiringItem } from '../../utils/storage'
 import amsIcon from '../../assets/ams-icon.png'
@@ -19,6 +20,8 @@ export function Header() {
         className="cursor-pointer"
         alt="AMS Logo"
       />
+
+      <Breadcrumbs />
 
       <span>
         Carrito:{' '}
