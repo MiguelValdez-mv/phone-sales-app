@@ -11,7 +11,7 @@ export function ProductItemList({ id, brand, model, price, imgUrl }) {
   const goToProductDetails = () => navigate(`/product/${id}`)
 
   return (
-    <Card className="gap-4" onClick={goToProductDetails}>
+    <Card className="gap-4 cursor-pointer" onClick={goToProductDetails}>
       <img className="w-48 h-48 self-center rounded-xl" src={imgUrl} />
 
       <Row className="justify-between items-center gap-4">

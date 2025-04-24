@@ -5,7 +5,13 @@ import { Button } from '../Button'
 import { Select } from '../Select'
 import { useState } from 'react'
 
-export function ProductActions({ id, colors = [], storages = [], addToCart }) {
+export function ProductActions({
+  id,
+  colors = [],
+  storages = [],
+  addToCart,
+  isAddingToCart,
+}) {
   const [colorCode, setColorCode] = useState(undefined)
   const [storageCode, setStorageCode] = useState(undefined)
 
@@ -42,6 +48,7 @@ export function ProductActions({ id, colors = [], storages = [], addToCart }) {
       <Button
         className="self-end"
         onClick={() => addToCart({ id, colorCode, storageCode })}
+        isLoading={isAddingToCart}
       >
         Añadir al carrito
       </Button>

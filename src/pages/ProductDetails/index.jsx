@@ -11,7 +11,7 @@ export function ProductDetailsView() {
   const { id } = useParams()
 
   const { productDetails, isLoading } = useGetProductDetails(id)
-  const { addToCart } = useAddToCart()
+  const { addToCart, isLoading: isAddingToCart } = useAddToCart()
 
   return (
     <Page className="md:flex-row justify-center gap-10" isLoading={isLoading}>
@@ -27,6 +27,7 @@ export function ProductDetailsView() {
           {...productDetails.options}
           id={productDetails.id}
           addToCart={addToCart}
+          isAddingToCart={isAddingToCart}
         />
       </Col>
     </Page>

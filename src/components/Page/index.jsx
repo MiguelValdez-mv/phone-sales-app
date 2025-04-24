@@ -1,10 +1,12 @@
 import { twMerge } from 'tailwind-merge'
-import { Col } from '../Col'
 
-export function Page({ className, children, ...rest }) {
+import { Col } from '../Col'
+import { Spinner } from '../Spinner'
+
+export function Page({ className, children, isLoading, ...rest }) {
   return (
     <Col className={twMerge('gap-6 p-8', className)} {...rest}>
-      {children}
+      {isLoading ? <Spinner /> : children}
     </Col>
   )
 }
