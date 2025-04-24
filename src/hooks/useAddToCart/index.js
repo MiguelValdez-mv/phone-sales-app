@@ -2,7 +2,7 @@ import { useState } from 'react'
 import axios from 'axios'
 
 import { API_URL, LOCAL_STORAGE_KEYS } from '../../constants'
-import { saveExpiringItem } from '../../utils/storage'
+import { saveExpiringItem, loadExpiringItem } from '../../utils/storage'
 
 export function useAddToCart() {
   const [isLoading, setIsLoading] = useState(false)
@@ -17,7 +17,13 @@ export function useAddToCart() {
         storageCode,
       })
 
-      saveExpiringItem(LOCAL_STORAGE_KEYS.CART_ITEMS_COUNT, response.data.count)
+      saveExpiringItem(
+        LOCAL_STORAGE_KEYS.CART_ITEMS_COUNT,
+        loadExpiringItem(LOCAL_STORAGE_KEYS.CART_ITEMS_COUNT) +
+          response.data.count
+      )
+
+      window.location.reload()
     } catch (e) {
       console.error(e)
     } finally {
