@@ -1,22 +1,27 @@
+import { useMemo } from 'react'
+
 import { Card } from '../Card'
 import { Col } from '../Col'
 import { CURRENCIES } from '../../constants'
 
 export function ProductDescription(props = {}) {
-  const descriptionValues = [
-    { title: 'Marca', value: props.brand },
-    { title: 'Modelo', value: props.model },
-    { title: 'Precio', value: `${props.price} ${CURRENCIES.EUR}` },
-    { title: 'CPU', value: props.cpu },
-    { title: 'RAM', value: props.ram },
-    { title: 'Sistema Operativo', value: props.os },
-    { title: 'Resolución de pantalla', value: props.displayResolution },
-    { title: 'Batería', value: props.battery },
-    { title: 'Cámara Principal', value: props.primaryCamera?.join?.(' ') },
-    { title: 'Cámara Secundaria', value: props.secondaryCmera },
-    { title: 'Dimensiones', value: props.dimentions },
-    { title: 'Peso', value: props.weight },
-  ]
+  const descriptionValues = useMemo(
+    () => [
+      { title: 'Marca', value: props.brand },
+      { title: 'Modelo', value: props.model },
+      { title: 'Precio', value: `${props.price} ${CURRENCIES.EUR}` },
+      { title: 'CPU', value: props.cpu },
+      { title: 'RAM', value: props.ram },
+      { title: 'Sistema Operativo', value: props.os },
+      { title: 'Resolución de pantalla', value: props.displayResolution },
+      { title: 'Batería', value: props.battery },
+      { title: 'Cámara Principal', value: props.primaryCamera?.join?.(' ') },
+      { title: 'Cámara Secundaria', value: props.secondaryCmera },
+      { title: 'Dimensiones', value: props.dimentions },
+      { title: 'Peso', value: props.weight },
+    ],
+    [props]
+  )
 
   return (
     <Card className="gap-4">
