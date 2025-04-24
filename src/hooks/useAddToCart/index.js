@@ -17,11 +17,7 @@ export function useAddToCart() {
         storageCode,
       })
 
-      saveExpiringItem(
-        LOCAL_STORAGE_KEYS.CART_ITEMS_COUNT,
-        loadExpiringItem(LOCAL_STORAGE_KEYS.CART_ITEMS_COUNT) +
-          response.data.count
-      )
+      saveExpiringItem(LOCAL_STORAGE_KEYS.CART_ITEMS_COUNT, response.data.count)
 
       window.location.reload()
     } catch (e) {
