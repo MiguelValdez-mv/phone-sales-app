@@ -12,7 +12,7 @@ export function ProductItemList({ id, brand, model, price, imgUrl }) {
 
   return (
     <Card className="gap-4" onClick={goToProductDetails}>
-      <img className="w-48 h-48 self-center" src={imgUrl} />
+      <img className="w-48 h-48 self-center rounded-xl" src={imgUrl} />
 
       <Row className="justify-between items-center gap-4">
         <Col>

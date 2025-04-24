@@ -1,7 +1,9 @@
 import { useParams } from 'react-router-dom'
 
 import { Page } from '../../components/Page'
+import { Col } from '../../components/Col'
 import { ProductDescription } from '../../components/ProductDescription'
+import { ProductActions } from '../../components/ProductActions'
 import { useGetProductDetails } from '../../hooks/useGetProductDetails'
 
 export function ProductDetailsView() {
@@ -10,10 +12,17 @@ export function ProductDetailsView() {
   const { productDetails, isLoading } = useGetProductDetails(id)
 
   return (
-    <Page isLoading={isLoading}>
-      <img className="w-48 h-48 self-center" src={productDetails.imgUrl} />
+    <Page className="md:flex-row justify-center gap-10" isLoading={isLoading}>
+      <img
+        className="w-64 h-64 rounded-xl self-center md:self-auto"
+        src={productDetails.imgUrl}
+      />
 
-      <ProductDescription {...productDetails} />
+      <Col className="gap-4">
+        <ProductDescription {...productDetails} />
+
+        <ProductActions {...productDetails.options} />
+      </Col>
     </Page>
   )
 }
