@@ -6,8 +6,16 @@ https://www.loom.com/share/b53fff6f16384efda9ecba6566507ae1?sid=8a898225-ac49-4c
 
 ### `npm start`
 
+Inicia el proyecto en modo desarrollo.
+
 ### `npm test`
+
+Ejecuta las pruebas del proyecto.
 
 ### `npm run build`
 
+Genera una versión optimizada para producción.
+
 ### `npm run lint`
+
+Verifica y muestra errores de estilo en el código.
